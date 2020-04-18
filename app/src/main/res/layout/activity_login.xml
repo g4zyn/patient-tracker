@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/firstNameEt"
+        app:layout_constraintBottom_toTopOf="@+id/appDesc"
 
         tools:ignore="MissingConstraints"
         />
@@ -39,8 +39,8 @@
         android:layout_height="wrap_content"
         android:text="@string/first_name"
 
-        app:layout_constraintTop_toBottomOf="@id/appDesc"
         app:layout_constraintBottom_toTopOf="@id/lastNameEt"
+        app:layout_constraintTop_toBottomOf="@id/appDesc"
 
         tools:ignore="MissingConstraints" />
 
@@ -50,8 +50,8 @@
         android:layout_height="wrap_content"
         android:text="@string/last_name"
 
-        app:layout_constraintTop_toBottomOf="@id/firstNameEt"
         app:layout_constraintBottom_toTopOf="@id/hospitalEt"
+        app:layout_constraintTop_toBottomOf="@id/firstNameEt"
 
         tools:ignore="MissingConstraints" />
 
@@ -61,8 +61,8 @@
         android:layout_height="wrap_content"
         android:text="@string/hospital"
 
-        app:layout_constraintTop_toBottomOf="@id/lastNameEt"
         app:layout_constraintBottom_toTopOf="@id/passwordEt"
+        app:layout_constraintTop_toBottomOf="@id/lastNameEt"
 
         tools:ignore="MissingConstraints" />
 
@@ -82,10 +82,10 @@
         android:layout_height="wrap_content"
         android:text="@string/submit"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordEt"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordEt"
 
 
         tools:ignore="MissingConstraints" />
