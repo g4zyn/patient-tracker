@@ -4,83 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activity.LoginActivity">
+    tools:context=".view.activity.LoginActivity"
+
+    style="@style/Container"
+    >
 
     <ImageView
+        style="@style/LogoStyle"
         android:id="@+id/logoImg"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_add_circle_black_24dp"
 
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/appDesc"
 
-        tools:ignore="MissingConstraints"
-        />
+        tools:ignore="MissingConstraints" />
 
     <TextView
+        style="@style/AppDescStyle"
         android:id="@+id/appDesc"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/app_description"
-        android:textSize="16sp"
 
-        app:layout_constraintTop_toBottomOf="@id/logoImg"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoImg"
         tools:ignore="MissingConstraints" />
 
     <EditText
+        style="@style/EditTextStyle"
         android:id="@+id/firstNameEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/first_name"
 
-        app:layout_constraintBottom_toTopOf="@id/lastNameEt"
-        app:layout_constraintTop_toBottomOf="@id/appDesc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/submitBtn"
 
         tools:ignore="MissingConstraints" />
 
     <EditText
+        style="@style/EditTextStyle"
         android:id="@+id/lastNameEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/last_name"
 
-        app:layout_constraintBottom_toTopOf="@id/hospitalEt"
         app:layout_constraintTop_toBottomOf="@id/firstNameEt"
 
         tools:ignore="MissingConstraints" />
 
     <EditText
+        style="@style/EditTextStyle"
         android:id="@+id/hospitalEt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hospital"
 
-        app:layout_constraintBottom_toTopOf="@id/passwordEt"
         app:layout_constraintTop_toBottomOf="@id/lastNameEt"
 
         tools:ignore="MissingConstraints" />
 
     <EditText
+        style="@style/EditTextStyle"
         android:id="@+id/passwordEt"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/password"
 
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hospitalEt"
+        app:layout_constraintBottom_toTopOf="@id/submitBtn"
 
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/submitBtn"
-        android:layout_width="200dp"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/submit"
+        style="@style/ButtonStyle"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
