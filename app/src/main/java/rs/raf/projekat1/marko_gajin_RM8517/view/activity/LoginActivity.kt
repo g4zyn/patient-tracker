@@ -28,7 +28,7 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
             val hospital = hospitalEt.text.toString()
             val pinCode = passwordEt.text.toString()
 
-            if (isValidPinCode(pinCode)) {
+            if (pinCode == PIN_CODE) {
                 login(User(firstName, lastName, hospital))
             }
         }
@@ -46,10 +46,6 @@ class LoginActivity : AppCompatActivity(R.layout.activity_login) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
-    }
-
-    private fun isValidPinCode(pinCode:String): Boolean {
-        return (pinCode == PIN_CODE)
     }
 
 }
