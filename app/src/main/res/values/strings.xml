@@ -15,4 +15,8 @@
     <string name="profile">profile</string>
     <string name="symptoms">Symptoms</string>
     <string name="add_new_patient">Add new patient</string>
+    <string name="in_waiting_room">In waiting room</string>
+    <string name="hospitalized">Hospitalized</string>
+    <string name="released">Released</string>
+    <string name="status_title">An overview of the numerous patient conditions</string>
 </resources>
