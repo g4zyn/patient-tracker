@@ -19,4 +19,10 @@
     <string name="hospitalized">Hospitalized</string>
     <string name="released">Released</string>
     <string name="status_title">An overview of the numerous patient conditions</string>
+    <string name="profile_title">User\'s profile</string>
+    <string name="edit">Edit</string>
+    <string name="logout">logout</string>
+    <string name="name_label">Name:</string>
+    <string name="surname_label">Surname:</string>
+    <string name="hospital_label">Hospital:</string>
 </resources>
