@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".view.activity.MainActivity">
 
-    <androidx.viewpager.widget.ViewPager
+    <rs.raf.projekat1.marko_gajin_RM8517.view.viewpager.NonScrollableViewPager
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="0dp"
