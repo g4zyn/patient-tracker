@@ -25,4 +25,6 @@
     <string name="name_label">Name:</string>
     <string name="surname_label">Surname:</string>
     <string name="hospital_label">Hospital:</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">save</string>
 </resources>
