@@ -13,7 +13,7 @@ class PatientAdapter(patientDiffItemCallback: PatientDiffItemCallback) : ListAda
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatientViewHolder {
 
         val layoutInflater = LayoutInflater.from(parent.context)
-        val  containerView = layoutInflater.inflate(R.layout.layout_patient_list_item, parent, false)
+        val  containerView = layoutInflater.inflate(R.layout.layout_waiting_list_item, parent, false)
 
         return PatientViewHolder(containerView)
     }

@@ -27,4 +27,6 @@
     <string name="hospital_label">Hospital:</string>
     <string name="cancel">Cancel</string>
     <string name="save">save</string>
+    <string name="healthy">healthy</string>
+    <string name="hospitalize">hospitalize</string>
 </resources>
