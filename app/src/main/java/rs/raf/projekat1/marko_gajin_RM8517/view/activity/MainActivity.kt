@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         initViewPager()
         initNavigation()
     }
-
+    
     private fun initViewPager() {
         viewPager.adapter = PagerAdapter(supportFragmentManager)
     }
