@@ -23,7 +23,9 @@ class PatientViewModel: ViewModel() {
                 "Patient$i",
                 "Surname",
                 "",
-                State.WAITING
+                State.WAITING,
+                null,
+                null
             )
             patients.add(patient)
         }
@@ -39,7 +41,9 @@ class PatientViewModel: ViewModel() {
             firstName,
             lastName,
             symptoms,
-            State.WAITING
+            State.WAITING,
+            null,
+            null
         )
         patients.add(patient)
 
