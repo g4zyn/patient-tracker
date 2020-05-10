@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/profileTitle"
+        style="@style/TitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -30,6 +31,7 @@
 
     <EditText
         android:id="@+id/nameEt"
+        style="@style/EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -39,6 +41,7 @@
 
     <EditText
         android:id="@+id/surnameEt"
+        style="@style/EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -48,6 +51,7 @@
 
     <EditText
         android:id="@+id/hospitalEt"
+        style="@style/EditTextStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -64,7 +68,6 @@
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/saveBtn"
 
         tools:ignore="MissingConstraints" />
 
@@ -76,7 +79,6 @@
         style="@style/ButtonStyle"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cancelBtn"
         app:layout_constraintEnd_toEndOf="parent"
 
         tools:ignore="MissingConstraints" />

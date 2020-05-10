@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/Container"
     tools:context=".view.activity.PatientCard">
 
     <TextView
         android:id="@+id/patientTitle"
+        style="@style/TitleStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/patient_card"
@@ -52,6 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/first_symptoms"
+        style="@style/TextViewStyle"
 
         app:layout_constraintTop_toBottomOf="@id/surnameEt"
         app:layout_constraintBottom_toTopOf="@id/symptoms"
@@ -61,6 +64,7 @@
         android:id="@+id/symptoms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/TextViewStyle"
 
         app:layout_constraintTop_toBottomOf="@id/symptomsTv"
         app:layout_constraintBottom_toTopOf="@id/currSymptomsTv"
@@ -68,6 +72,7 @@
 
     <TextView
         android:id="@+id/currSymptomsTv"
+        style="@style/TextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/current_symptoms"
@@ -87,6 +92,7 @@
 
     <TextView
         android:id="@+id/hospitalizedTv"
+        style="@style/TextViewStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/hospitalized_on"
@@ -99,6 +105,7 @@
         android:id="@+id/hospitalized"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/TextViewStyle"
 
         app:layout_constraintTop_toBottomOf="@id/hospitalizedTv"
         app:layout_constraintBottom_toTopOf="@id/cancelBtn"

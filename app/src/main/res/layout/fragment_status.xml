@@ -8,6 +8,7 @@
 
     <TextView
         android:layout_width="match_parent"
+        style="@style/TitleStyle"
         android:layout_height="wrap_content"
         android:text="@string/status_title"
 
@@ -16,6 +17,7 @@
 
     <TextView
         android:id="@+id/label1"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/in_waiting_room"
@@ -28,6 +30,7 @@
 
     <TextView
         android:id="@+id/waitingRoom"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -37,6 +40,7 @@
         tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/hospitalized"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -47,6 +51,7 @@
 
     <TextView
         android:id="@+id/released"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -57,6 +62,7 @@
 
     <TextView
         android:id="@+id/label2"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hospitalized"
@@ -69,6 +75,7 @@
 
     <TextView
         android:id="@+id/label3"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/released"
