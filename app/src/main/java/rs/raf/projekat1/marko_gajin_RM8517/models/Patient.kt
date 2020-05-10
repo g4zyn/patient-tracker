@@ -8,6 +8,6 @@ class Patient (
     val lastName: String,
     val symptoms: String,
     var state: State,
-    val hospitalizedDate: Date?,
-    val releasedDate: Date?
+    var hospitalizedDate: Date?,
+    var releasedDate: Date?
 )

@@ -2,6 +2,7 @@ package rs.raf.projekat1.marko_gajin_RM8517.view.fragments
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -25,18 +26,19 @@ class WaitingRoomFragment : Fragment(R.layout.fragment_waiting_room) {
     }
 
     private fun init() {
-        initUI()
-        initObservers()
-    }
-
-    private fun initUI() {
         initRecycler()
+        initObservers()
+        initListeners()
     }
 
     private fun initRecycler() {
-        waitingRoomRv.layoutManager = LinearLayoutManager(this.activity)
-        patientAdapter = PatientAdapter(PatientDiffItemCallback())
-        waitingRoomRv.adapter = patientAdapter
+        waitingListRv.layoutManager = LinearLayoutManager(activity)
+        patientAdapter = PatientAdapter(
+            PatientDiffItemCallback(),
+            { patientViewModel.removeFromWaitingList(it) },
+            { patientViewModel.addToHospitalizedList(it) }
+        )
+        waitingListRv.adapter = patientAdapter
     }
 
     private fun initObservers() {
@@ -44,5 +46,7 @@ class WaitingRoomFragment : Fragment(R.layout.fragment_waiting_room) {
             patientAdapter.submitList(it)
         })
     }
+
+    private fun initListeners() {}
 
 }

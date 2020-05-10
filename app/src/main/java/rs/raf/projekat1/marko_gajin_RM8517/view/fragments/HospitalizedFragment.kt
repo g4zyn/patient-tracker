@@ -25,17 +25,18 @@ class HospitalizedFragment : Fragment(R.layout.fragment_hospitalized) {
     }
 
     private fun init() {
-        initUI()
-        initObservers()
-    }
-
-    private fun initUI() {
         initRecycler()
+        initObservers()
+        initListeners()
     }
 
     private fun initRecycler() {
         hospitalizedRv.layoutManager = LinearLayoutManager(this.activity)
-        patientAdapter = HospitalizedPatientAdapter(PatientDiffItemCallback())
+        patientAdapter = HospitalizedPatientAdapter(
+            PatientDiffItemCallback(),
+            { editPatientInfo() },
+            { patientViewModel.addPatientToReleasedList(it) }
+        )
         hospitalizedRv.adapter = patientAdapter
     }
 
@@ -44,5 +45,9 @@ class HospitalizedFragment : Fragment(R.layout.fragment_hospitalized) {
             patientAdapter.submitList(it)
         })
     }
+
+    private fun initListeners() {}
+
+    private fun editPatientInfo() {}
 
 }

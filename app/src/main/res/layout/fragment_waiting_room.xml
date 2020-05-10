@@ -4,8 +4,17 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <EditText
+        android:id="@+id/searchEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/waitingListRv"
+    />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/waitingRoomRv"
+        android:id="@+id/waitingListRv"
         android:layout_width="0dp"
         android:layout_height="0dp"
 

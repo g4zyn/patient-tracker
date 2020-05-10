@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import rs.raf.projekat1.marko_gajin_RM8517.models.Database
 import rs.raf.projekat1.marko_gajin_RM8517.models.Patient
 import rs.raf.projekat1.marko_gajin_RM8517.models.State
+import java.util.*
 import kotlin.random.Random
 
 class PatientViewModel: ViewModel() {
@@ -48,6 +49,27 @@ class PatientViewModel: ViewModel() {
             State.HOSPITALIZED -> hospitalizedLiveData
             else -> releasedLiveData
         }
+    }
+
+    fun removeFromWaitingList(patient: Patient) {
+        database.patients.remove(patient)
+        waitingLiveData.value = database.patients.filter(waitingFilter)
+    }
+
+    fun addToHospitalizedList(patient: Patient) {
+        patient.state = State.HOSPITALIZED
+        patient.hospitalizedDate = Date()
+
+        waitingLiveData.value = database.patients.filter(waitingFilter)
+        hospitalizedLiveData.value = database.patients.filter(hospitalizedFilter)
+    }
+
+    fun addPatientToReleasedList(patient: Patient) {
+        patient.state = State.RELEASED
+        patient.releasedDate = Date()
+
+        hospitalizedLiveData.value = database.patients.filter(hospitalizedFilter)
+        releasedLiveData.value = database.patients.filter(releasedFilter)
     }
 
 }

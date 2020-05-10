@@ -28,6 +28,7 @@ class ReleasedFragment : Fragment(R.layout.fragment_released) {
     private fun init() {
         initRecycler()
         initObservers()
+        initListeners()
     }
 
     private fun initRecycler() {
@@ -37,9 +38,11 @@ class ReleasedFragment : Fragment(R.layout.fragment_released) {
     }
 
     private fun initObservers() {
-        patientViewModel.getPatients(State.WAITING).observe(viewLifecycleOwner, Observer {
+        patientViewModel.getPatients(State.RELEASED).observe(viewLifecycleOwner, Observer {
             patientAdapter.submitList(it)
         })
     }
+
+    private fun initListeners() {}
 
 }
