@@ -25,14 +25,19 @@ class NewPatientFragment : Fragment(R.layout.fragment_input) {
 
     private fun initListeners() {
         addPatientBtn.setOnClickListener {
-            Timber.e("Adding new patient to waiting list...")
-
             val firstName = firstNameEt.text.toString()
             val lastName =  lastNameEt.text.toString()
             val symptoms = symptomsEt.text.toString()
 
             patientViewModel.addPatient(firstName, lastName, symptoms)
+            clearInput()
         }
+    }
+
+    private fun clearInput() {
+        firstNameEt.text.clear()
+        lastNameEt.text.clear()
+        symptomsEt.text.clear()
     }
 
 }
