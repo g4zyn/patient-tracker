@@ -15,7 +15,7 @@ class EditProfileActivity : AppCompatActivity(R.layout.activity_edit_profile) {
         const val USER_KEY = "userKey"
     }
 
-    private var user: User? = null
+    private lateinit var user: User
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +29,10 @@ class EditProfileActivity : AppCompatActivity(R.layout.activity_edit_profile) {
 
     private fun parseIntent() {
         intent.let {
-            user = it.getParcelableExtra(USER_KEY)
-            nameEt.setText(user?.firstName)
-            surnameEt.setText(user?.lastName)
-            hospitalEt.setText(user?.hospital)
+            user = it.getParcelableExtra(USER_KEY) as User
+            nameEt.setText(user.firstName)
+            surnameEt.setText(user.lastName)
+            hospitalEt.setText(user.hospital)
         }
     }
 
@@ -47,11 +47,11 @@ class EditProfileActivity : AppCompatActivity(R.layout.activity_edit_profile) {
 
     private fun save() {
         val returnIntent = Intent()
-        user?.firstName = nameEt.text.toString()
-        user?.lastName = surnameEt.text.toString()
-        user?.hospital = hospitalEt.text.toString()
+        user.firstName = nameEt.text.toString()
+        user.lastName = surnameEt.text.toString()
+        user.hospital = hospitalEt.text.toString()
 
-        returnIntent.putExtra(ProfileFragment.USER_CHANGED, user)
+        returnIntent.putExtra(USER_KEY, user)
         setResult(Activity.RESULT_OK, returnIntent)
         finish()
     }

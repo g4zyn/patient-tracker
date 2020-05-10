@@ -14,11 +14,10 @@ import rs.raf.projekat1.marko_gajin_RM8517.view.activity.LoginActivity
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
-    private var user : User? = null
+    private lateinit var user: User
 
     companion object {
-        const val USER_EDIT_CODE = 111
-        const val USER_CHANGED = "userChangedKey"
+        const val REQ_CODE = 111
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,9 +29,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         initListeners()
 
         this.user = getUser()
-        nameTv.text = user?.firstName
-        surnameTv.text = user?.lastName
-        hospitalTv.text = user?.hospital
+        nameTv.text = user.firstName
+        surnameTv.text = user.lastName
+        hospitalTv.text = user.hospital
     }
 
     private fun initListeners() {
@@ -46,33 +45,30 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            USER_EDIT_CODE -> {
-                if (resultCode == Activity.RESULT_OK) {
-                    user = data?.getParcelableExtra(USER_CHANGED) ?: user
-                    setUser()
-                }
-            }
+
+        if (requestCode == REQ_CODE && resultCode == Activity.RESULT_OK) {
+            user = data?.getParcelableExtra(EditProfileActivity.USER_KEY) as User
+            setUser()
         }
     }
 
     private fun setUser() {
         val sharedPreferences = this.activity?.getSharedPreferences(activity?.packageName, Context.MODE_PRIVATE)
         val editor = sharedPreferences?.edit()
-        editor?.putString(LoginActivity.NAME_KEY, user?.firstName)
-        editor?.putString(LoginActivity.SURNAME_KEY, user?.lastName)
-        editor?.putString(LoginActivity.HOSPITAL_KEY, user?.hospital)
+        editor?.putString(LoginActivity.NAME_KEY, user.firstName)
+        editor?.putString(LoginActivity.SURNAME_KEY, user.lastName)
+        editor?.putString(LoginActivity.HOSPITAL_KEY, user.hospital)
         editor?.apply()
 
-        nameTv.text = user?.firstName
-        surnameTv.text = user?.lastName
-        hospitalTv.text = user?.hospital
+        nameTv.text = user.firstName
+        surnameTv.text = user.lastName
+        hospitalTv.text = user.hospital
     }
 
     private fun editProfile() {
         val intent = Intent(this.activity, EditProfileActivity::class.java)
         intent.putExtra(EditProfileActivity.USER_KEY, this.user)
-        startActivityForResult(intent, USER_EDIT_CODE)
+        startActivityForResult(intent, REQ_CODE)
     }
 
     private fun logout() {
