@@ -4,14 +4,17 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import rs.raf.projekat1.marko_gajin_RM8517.models.Patient
+import rs.raf.projekat1.marko_gajin_RM8517.models.State
 import timber.log.Timber
 import kotlin.random.Random
 
-class PatientViewModel : ViewModel() {
+class PatientViewModel: ViewModel() {
 
-    private val patientList : MutableList<Patient> = mutableListOf()
+    private val patients: MutableList<Patient> = mutableListOf()
 
-    private val patients : MutableLiveData<List<Patient>> = MutableLiveData()
+    private val waitingLiveData: MutableLiveData<List<Patient>> = MutableLiveData()
+    private val hospitalizedLiveData: MutableLiveData<List<Patient>> = MutableLiveData()
+    private val releasedLiveData: MutableLiveData<List<Patient>> = MutableLiveData()
 
     init {
         for (i in 0..5) {
@@ -20,13 +23,13 @@ class PatientViewModel : ViewModel() {
                 "Patient$i",
                 "Surname",
                 "",
-                ""
+                State.WAITING
             )
-            patientList.add(patient)
+            patients.add(patient)
         }
         val listToSubmit = mutableListOf<Patient>()
-        listToSubmit.addAll(patientList)
-        patients.value = listToSubmit
+        listToSubmit.addAll(patients)
+        waitingLiveData.value = listToSubmit
     }
 
     fun addPatient(firstName: String, lastName: String, symptoms: String) {
@@ -36,28 +39,22 @@ class PatientViewModel : ViewModel() {
             firstName,
             lastName,
             symptoms,
-            ""
+            State.WAITING
         )
-        patientList.add(patient)
-
-        Timber.e("${patient.firstName} , ${patient.lastName}, ${patient.symptoms}")
+        patients.add(patient)
 
         val listToSubmit = mutableListOf<Patient>()
-        listToSubmit.addAll(patientList)
+        listToSubmit.addAll(patients)
 
-        patients.value = listToSubmit
+        waitingLiveData.value = listToSubmit
     }
 
-    fun getPatients() : LiveData<List<Patient>> {
-        return  patients
-    }
-
-    fun filterPatient(filter: String) {
-
-        val filteredList = patientList.filter {
-            it.firstName.toLowerCase().startsWith(filter.toLowerCase())
+    fun getPatients(state: State) : LiveData<List<Patient>> {
+       return when (state) {
+            State.WAITING -> waitingLiveData
+            State.HOSPITALIZED -> hospitalizedLiveData
+            else -> releasedLiveData
         }
-        patients.value = filteredList
     }
 
 }

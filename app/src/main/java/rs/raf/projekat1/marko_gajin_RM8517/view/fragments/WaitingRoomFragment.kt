@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_waiting_room.*
 import rs.raf.projekat1.marko_gajin_RM8517.R
+import rs.raf.projekat1.marko_gajin_RM8517.models.State
 import rs.raf.projekat1.marko_gajin_RM8517.view.recycler.adapters.PatientAdapter
 import rs.raf.projekat1.marko_gajin_RM8517.view.recycler.diff.PatientDiffItemCallback
 import rs.raf.projekat1.marko_gajin_RM8517.viewmodels.PatientViewModel
@@ -39,7 +40,7 @@ class WaitingRoomFragment : Fragment(R.layout.fragment_waiting_room) {
     }
 
     private fun initObservers() {
-        patientViewModel.getPatients().observe(viewLifecycleOwner, Observer {
+        patientViewModel.getPatients(State.WAITING).observe(viewLifecycleOwner, Observer {
             patientAdapter.submitList(it)
         })
     }

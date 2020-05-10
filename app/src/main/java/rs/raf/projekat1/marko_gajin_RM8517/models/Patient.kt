@@ -5,5 +5,5 @@ class Patient (
     val firstName: String,
     val lastName: String,
     val symptoms: String,
-    var status: String
+    var state: State
 )
