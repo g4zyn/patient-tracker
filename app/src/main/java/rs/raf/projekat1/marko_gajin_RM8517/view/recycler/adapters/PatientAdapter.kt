@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import rs.raf.projekat1.marko_gajin_RM8517.R
 import rs.raf.projekat1.marko_gajin_RM8517.models.Patient
 import rs.raf.projekat1.marko_gajin_RM8517.view.recycler.diff.PatientDiffItemCallback
-import rs.raf.projekat1.marko_gajin_RM8517.view.recycler.viewholder.PatientViewHolder
+import rs.raf.projekat1.marko_gajin_RM8517.view.recycler.viewholders.PatientViewHolder
 
 class PatientAdapter(patientDiffItemCallback: PatientDiffItemCallback) : ListAdapter<Patient, PatientViewHolder>(patientDiffItemCallback) {
 

@@ -29,4 +29,6 @@
     <string name="save">save</string>
     <string name="healthy">healthy</string>
     <string name="hospitalize">hospitalize</string>
+    <string name="card">card</string>
+    <string name="release">release</string>
 </resources>

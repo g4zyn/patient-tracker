@@ -1,4 +1,4 @@
-package rs.raf.projekat1.marko_gajin_RM8517.view.recycler.viewholder
+package rs.raf.projekat1.marko_gajin_RM8517.view.recycler.viewholders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
