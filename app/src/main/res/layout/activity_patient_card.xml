@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.PatientCard">
+
+    <TextView
+        android:id="@+id/patientTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/patient_card"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/logoImg"
+    />
+
+    <ImageView
+        style="@style/LogoStyle"
+        android:id="@+id/logoImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_healing_black_24dp"
+
+        app:layout_constraintBottom_toTopOf="@id/nameEt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patientTitle"
+    />
+
+    <EditText
+        android:id="@+id/nameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintBottom_toTopOf="@id/surnameEt"
+        app:layout_constraintTop_toBottomOf="@id/logoImg"
+    />
+
+    <EditText
+        android:id="@+id/surnameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/nameEt"
+        app:layout_constraintBottom_toTopOf="@id/symptomsTv"
+    />
+
+    <TextView
+        android:id="@+id/symptomsTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/first_symptoms"
+
+        app:layout_constraintTop_toBottomOf="@id/surnameEt"
+        app:layout_constraintBottom_toTopOf="@id/symptoms"
+    />
+
+    <TextView
+        android:id="@+id/symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/symptomsTv"
+        app:layout_constraintBottom_toTopOf="@id/currSymptomsTv"
+    />
+
+    <TextView
+        android:id="@+id/currSymptomsTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/current_symptoms"
+
+        app:layout_constraintTop_toBottomOf="@id/symptoms"
+        app:layout_constraintBottom_toTopOf="@id/currSymptomsEt"
+    />
+
+    <EditText
+        android:id="@+id/currSymptomsEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/currSymptomsTv"
+        app:layout_constraintBottom_toTopOf="@id/hospitalizedTv"
+    />
+
+    <TextView
+        android:id="@+id/hospitalizedTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hospitalized_on"
+
+        app:layout_constraintTop_toBottomOf="@id/currSymptomsEt"
+        app:layout_constraintBottom_toTopOf="@id/hospitalized"
+    />
+
+    <TextView
+        android:id="@+id/hospitalized"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toBottomOf="@id/hospitalizedTv"
+        app:layout_constraintBottom_toTopOf="@id/cancelBtn"
+    />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        style="@style/ButtonStyle"
+
+        app:layout_constraintTop_toBottomOf="@id/hospitalized"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+    />
+
+    <Button
+        android:id="@+id/saveBtn"
+        style="@style/ButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hospitalized"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

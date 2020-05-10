@@ -31,4 +31,8 @@
     <string name="hospitalize">hospitalize</string>
     <string name="card">card</string>
     <string name="release">release</string>
+    <string name="patient_card">patient\'s card</string>
+    <string name="first_symptoms">First symptoms:</string>
+    <string name="current_symptoms">Current symptoms:</string>
+    <string name="hospitalized_on">Hospitalized on:</string>
 </resources>

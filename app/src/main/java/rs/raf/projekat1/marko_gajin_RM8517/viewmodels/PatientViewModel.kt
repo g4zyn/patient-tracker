@@ -33,6 +33,7 @@ class PatientViewModel: ViewModel() {
             firstName,
             lastName,
             symptoms,
+            symptoms,
             State.WAITING,
             null,
             null
@@ -70,6 +71,18 @@ class PatientViewModel: ViewModel() {
 
         hospitalizedLiveData.value = database.patients.filter(hospitalizedFilter)
         releasedLiveData.value = database.patients.filter(releasedFilter)
+    }
+
+    fun updateData(patient: Patient) {
+        updatePatient(patient)
+        hospitalizedLiveData.value = database.patients.filter(hospitalizedFilter)
+    }
+
+    private fun updatePatient(newPatient: Patient) {
+        val patient = database.patients.find { it.id == newPatient.id }
+        val index = database.patients.indexOf(patient)
+        database.patients.removeAt(index)
+        database.patients.add(index, newPatient)
     }
 
 }

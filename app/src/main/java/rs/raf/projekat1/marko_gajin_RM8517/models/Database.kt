@@ -16,6 +16,7 @@ class Database() {
                 names[Random.nextInt(0, 5)],
                 surnames[Random.nextInt(0, 5)],
                 "",
+                "",
                 State.WAITING,
                 null,
                 null
