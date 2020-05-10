@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import rs.raf.projekat1.marko_gajin_RM8517.R
-import rs.raf.projekat1.marko_gajin_RM8517.view.viewpager.PagerAdapter
+import rs.raf.projekat1.marko_gajin_RM8517.view.viewpager.NavigationAdapter
 
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
@@ -20,33 +20,27 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     }
     
     private fun initViewPager() {
-        viewPager.adapter = PagerAdapter(supportFragmentManager)
+        viewPager.adapter = NavigationAdapter(supportFragmentManager)
     }
 
     private fun initNavigation() {
         bottomNavigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.statusNav -> {
-                    viewPager.setCurrentItem(PagerAdapter.FRAGMENT_STATUS, false)
+                    viewPager.setCurrentItem(NavigationAdapter.FRAGMENT_OVERVIEW, false)
                 }
                 R.id.inputNav -> {
-                    viewPager.setCurrentItem(PagerAdapter.FRAGMENT_INPUT, false)
+                    viewPager.setCurrentItem(NavigationAdapter.FRAGMENT_NEW_PATIENT, false)
                 }
                 R.id.listNav -> {
-                    viewPager.setCurrentItem(PagerAdapter.FRAGMENT_LIST, false)
+                    viewPager.setCurrentItem(NavigationAdapter.FRAGMENT_LIST, false)
                 }
                 R.id.profileNav -> {
-                    viewPager.setCurrentItem(PagerAdapter.FRAGMENT_PROFILE, false)
+                    viewPager.setCurrentItem(NavigationAdapter.FRAGMENT_PROFILE, false)
                 }
             }
             true
         }
     }
-
-//    private fun initFragment() {
-//        val transaction = supportFragmentManager.beginTransaction()
-//        transaction.add(R.id.testFcv, TestFragment())
-//        transaction.commit()
-//    }
 
 }

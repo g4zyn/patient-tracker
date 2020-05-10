@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.layout_waiting_list_item.*
 import kotlinx.android.synthetic.main.layout_waiting_list_item.view.*
 import rs.raf.projekat1.marko_gajin_RM8517.models.Patient
 
-class PatientViewHolder(
+class WaitingPatientVH(
     override val containerView: View,
     private val onHealthyBtnClicked: (Int) -> Unit,
     private val onHospitalizeBtnClicked: (Int) -> Unit

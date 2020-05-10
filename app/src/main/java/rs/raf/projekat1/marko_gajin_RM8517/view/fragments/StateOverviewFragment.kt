@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.fragment_status.*
 import rs.raf.projekat1.marko_gajin_RM8517.R
 import rs.raf.projekat1.marko_gajin_RM8517.models.State
 import rs.raf.projekat1.marko_gajin_RM8517.viewmodels.PatientViewModel
-class StatusFragment : Fragment(R.layout.fragment_status) {
+class StateOverviewFragment : Fragment(R.layout.fragment_status) {
 
     private val patientViewModel: PatientViewModel by activityViewModels()
 

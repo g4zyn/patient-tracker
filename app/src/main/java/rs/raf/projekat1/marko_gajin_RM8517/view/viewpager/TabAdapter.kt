@@ -5,20 +5,19 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import rs.raf.projekat1.marko_gajin_RM8517.view.fragments.HospitalizedFragment
 import rs.raf.projekat1.marko_gajin_RM8517.view.fragments.ReleasedFragment
-import rs.raf.projekat1.marko_gajin_RM8517.view.fragments.WaitingRoomFragment
+import rs.raf.projekat1.marko_gajin_RM8517.view.fragments.WaitingFragment
 
 class TabAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     companion object {
         private const val ITEM_COUNT = 3
-        const val WAITING_ROOM = 0
+        const val WAITING = 0
         const val HOSPITALIZED = 1
-        const val RELEASED = 2
     }
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
-            WAITING_ROOM -> WaitingRoomFragment()
+            WAITING -> WaitingFragment()
             HOSPITALIZED -> HospitalizedFragment()
             else -> ReleasedFragment()
         }
@@ -30,7 +29,7 @@ class TabAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(fragme
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when (position) {
-            WAITING_ROOM -> "Waiting Room"
+            WAITING -> "Waiting Room"
             HOSPITALIZED -> "Hospitalized"
             else -> "Released"
         }

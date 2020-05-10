@@ -10,7 +10,7 @@ import rs.raf.projekat1.marko_gajin_RM8517.R
 import rs.raf.projekat1.marko_gajin_RM8517.viewmodels.PatientViewModel
 import timber.log.Timber
 
-class InputFragment : Fragment(R.layout.fragment_input) {
+class NewPatientFragment : Fragment(R.layout.fragment_input) {
 
     private val patientViewModel: PatientViewModel by activityViewModels()
 

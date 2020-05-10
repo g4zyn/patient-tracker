@@ -14,7 +14,7 @@ import rs.raf.projekat1.marko_gajin_RM8517.view.recycler.adapters.PatientAdapter
 import rs.raf.projekat1.marko_gajin_RM8517.view.recycler.diff.PatientDiffItemCallback
 import rs.raf.projekat1.marko_gajin_RM8517.viewmodels.PatientViewModel
 
-class WaitingRoomFragment : Fragment(R.layout.fragment_waiting_room) {
+class WaitingFragment : Fragment(R.layout.fragment_waiting_room) {
 
     private val patientViewModel: PatientViewModel by activityViewModels()
 
